@@ -33,3 +33,5 @@ app.listen(PORT, () => {
 })
 
 routes(app)
+
+module.exports = app
