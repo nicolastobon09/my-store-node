@@ -5,7 +5,7 @@ const routes = require('./routes')
 const { logErrors, errorHandler, boomErrorHandler } = require('./middlewares/error.handler')
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json())
 
@@ -25,7 +25,7 @@ app.use(logErrors)
 app.use(boomErrorHandler)
 app.use(errorHandler)
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.send('Hello World! using express')
 })
 app.listen(PORT, () => {
